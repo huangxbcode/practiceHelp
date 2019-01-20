@@ -1,12 +1,48 @@
 {
-  "pages": [
-    "pages/index/index"
-  ],
-  "window": {
-    "backgroundColor": "#F6F6F6",
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "BUCT实习帮",
-    "navigationBarTextStyle": "black"
-  }
+	"pages": [
+		"pages/index/index",
+		"pages/deliver/deliver",
+		"pages/me/me"
+	],
+	"window": {
+		"backgroundColor": "#fff",
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#3399ff",
+		"navigationBarTitleText": "BUCT实习帮",
+		"navigationBarTextStyle": "white",
+		"enablePullDownRefresh": true,
+		"onReachBottomDistance": 30
+	},
+	"tabBar": {
+		"color": "#D3D3D3",
+		"selectedColor": "#3399ff",
+		"borderStyle": "black",
+		"backgroundColor": "#fff",
+		"box-shadow": "0 0 6px 0",
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"text": "机会",
+				"iconPath": "images/tabBar/index.png",
+				"selectedIconPath": "images/tabBar/selectIndex.png"
+			},
+			{
+				"pagePath": "pages/deliver/deliver",
+				"text": "投递",
+				"iconPath": "images/tabBar/deliver.png",
+				"selectedIconPath": "images/tabBar/selectDeliver.png"
+			},
+			{
+				"pagePath": "pages/me/me",
+				"text": "我的",
+				"iconPath": "images/tabBar/me.png",
+				"selectedIconPath": "images/tabBar/selectMe.png"
+			}
+		]
+	},
+	"permission":{
+		"scope.userLocation":{
+			"desc":"机会页面左上角可更改您的位置"
+		}
+	}
 }
