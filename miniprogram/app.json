@@ -2,7 +2,8 @@
 	"pages": [
 		"pages/index/index",
 		"pages/deliver/deliver",
-		"pages/me/me"
+		"pages/me/me",
+		"pages/start/start"
 	],
 	"window": {
 		"backgroundColor": "#fff",

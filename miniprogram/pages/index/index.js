@@ -11,33 +11,32 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		address:'12345'
+		address:''
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-		wx.getLocation({
-			success: (res) => {
-				qqmapsdk.reverseGeocoder({
-					location: {
-						latitude:res.latitude,
-						longitude:res.longitude
-					},
-					success:(res) => {
-						debugger;
-						console.log(res.result.ad_info.province);
-						this.setData({
-							address: res.result.ad_info.province
-						});
-					},
-					fail: (error) => {
-						console.error(error);
-					},
-				})
-			},
-		})
+		// wx.getLocation({
+		// 	success: (res) => {
+		// 		qqmapsdk.reverseGeocoder({
+		// 			location: {
+		// 				latitude:res.latitude,
+		// 				longitude:res.longitude
+		// 			},
+		// 			success:(res) => {
+		// 				console.log(res.result.ad_info.province);
+		// 				this.setData({
+		// 					address: res.result.ad_info.province
+		// 				});
+		// 			},
+		// 			fail: (error) => {
+		// 				console.error(error);
+		// 			},
+		// 		})
+		// 	},
+		// })
 	},
 
 	/**

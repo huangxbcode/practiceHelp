@@ -1,0 +1,9 @@
+<!--pages/start/start.wxml-->
+<view class='container'>
+	<view class='netMiss'>
+		<image src='../../images/netMiss.png'></image>
+			<text>当前无网络</text>
+			<van-button bind:click="goToIndex" type="danger">点击重试</van-button>
+	</view>
+</view>
+
