@@ -4,22 +4,70 @@ const QQMapWX = require('../../utils/qqmap-wx-jssdk.js');
 const qqmapsdk = new QQMapWX({
   key: 'JEHBZ-IMWL5-47LIP-QKBUW-BKGT3-BDFG4' // 必填
 });
-const swiper = require('../../utils/swiper.js');
-const chooseJob = require('../../utils/chooseJob.js');
-const that = this;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    address: ''
+    address: '',
+		swiper:[],
+		chooseJob:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+		wx.cloud.getTempFileURL({
+			fileList: [
+				{
+					fileID: 'cloud://ceshi-fd7997.6365-ceshi-fd7997/images/swiper/swiper1.png',
+				maxAge: 24 * 60 * 60, // one hour
+			},
+				{
+					fileID: 'cloud://ceshi-fd7997.6365-ceshi-fd7997/images/swiper/swiper2.png',
+					maxAge: 24 * 60 * 60, // one hour
+				},
+				{
+					fileID: 'cloud://ceshi-fd7997.6365-ceshi-fd7997/images/swiper/swiper3.png',
+					maxAge: 24 * 60 * 60, // one hour
+				},
+				{
+					fileID: 'cloud://ceshi-fd7997.6365-ceshi-fd7997/images/swiper/swiper4.jpg',
+					maxAge: 24 * 60 * 60, // one hour
+				},
+				{
+					fileID: 'cloud://ceshi-fd7997.6365-ceshi-fd7997/images/shixi/duanqi.png',
+					maxAge: 24 * 60 * 60, // one hour
+				},
+				{
+					fileID: 'cloud://ceshi-fd7997.6365-ceshi-fd7997/images/shixi/gaoxin.png',
+					maxAge: 24 * 60 * 60, // one hour
+				},
+				{
+					fileID: 'cloud://ceshi-fd7997.6365-ceshi-fd7997/images/shixi/jizhao.png',
+					maxAge: 24 * 60 * 60, // one hour
+				},
+				{
+					fileID: 'cloud://ceshi-fd7997.6365-ceshi-fd7997/images/shixi/tuijian.png',
+					maxAge: 24 * 60 * 60, // one hour
+				}
+			]
+		}).then(res => {
+			// get temp file URL
+			let chooseJob = res.fileList.splice(4,4);
+			chooseJob[0].name = "急招职位";
+			chooseJob[1].name = "推荐职位";
+			chooseJob[2].name = "高薪实习";
+			chooseJob[3].name = "短期实习";
+			this.setData({
+				swiper:res.fileList.splice(0,4),
+				chooseJob
+			});
+		}).catch(error => {
+			console.log(error);
+		});
     wx.getLocation({
       success: (res) => {
         qqmapsdk.reverseGeocoder({
@@ -31,8 +79,6 @@ Page({
             const city = res.result.ad_info.city.substring(0, res.result.ad_info.city.length - 1);
             this.setData({
               address: city,
-							swiper,
-							chooseJob
             });
           },
           fail: (error) => {

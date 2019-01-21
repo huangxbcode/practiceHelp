@@ -16,7 +16,7 @@
     <swiper class='swiper' autoplay="true" circular="true">
       <block wx:key="{{index}}" wx:for="{{swiper}}">
         <swiper-item>
-          <image src="{{item.src}}" class="slide-image" />
+          <image src="{{item.tempFileURL}}" class="slide-image" />
         </swiper-item>
       </block>
     </swiper>
@@ -24,7 +24,7 @@
     <view class='chooseJob'>
       <view class='chooseJobItem' wx:key="{{index}}" wx:for="{{chooseJob}}">
         <view class='chooseJobItemTop'>
-          <image src='{{item.src}}'></image>
+          <image src='{{item.tempFileURL}}'></image>
         </view>
         <view class='chooseJobItemBottom'>
           {{item.name}}
@@ -55,8 +55,10 @@
 			num="5天/周"
 			num-class="num"
 			>
-        <view slot="tags">
+        <view class='tags' slot="tags">
           <view class="jobInfoShowTag">岗位晋升</view>
+					<view class="jobInfoShowTag">帅哥多</view>
+					<view class="jobInfoShowTag">管理规范</view>
         </view>
       </van-card>
     </view>
