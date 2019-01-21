@@ -9,7 +9,7 @@
   <view class='other' wx:key="{{index}}" wx:for="{{cityList}}">
     <text>{{index}}</text>
     <view class='cityWrap'>
-      <view class='city' id="{{itemName.name === positionCity}}" wx:for-index="idx" wx:for-item="itemName" wx:for="{{item}}" wx:key="{{itemName.value}}">
+      <view data-city="{{itemName.name}}" bindtap='chooseCity' class='city' id="{{itemName.name === positionCity}}" wx:for-index="idx" wx:for-item="itemName" wx:for="{{item}}" wx:key="{{itemName.value}}">
         {{itemName.name}}
       </view>
     </view>

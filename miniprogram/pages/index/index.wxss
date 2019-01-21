@@ -25,3 +25,96 @@
 .van-search__field {
 	border-radius: 30rpx !important;
 }
+
+/* 第一模块 */
+.first {
+	padding-top: 20rpx;
+	background-color: #fff;
+}
+/* 轮播图 */
+.swiper {
+	height: 150rpx;
+}
+.slide-image {
+	width: 730rpx;
+	height: 150rpx;
+	margin: 0 10rpx 0 10rpx;
+	border-radius: 70rpx;
+}
+/* 职位你选择 */
+.chooseJob {
+	padding: 20rpx;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.chooseJobItem {
+	height: 180rpx;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+.chooseJobItemTop {
+	width: 100rpx;
+	height:100rpx;
+	border-radius: 50%;
+	background-color: #f0f0f0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.chooseJobItemTop image {
+	width: 80rpx;
+	height: 80rpx;
+}
+.chooseJobItemBottom {
+	font-size: 35rpx;
+	font-weight: 500;
+}
+
+/* 第二模块 */
+.jobInfo {
+	margin-top: 20rpx;
+	background-color: #fff;
+}
+.jobInfoSelect {
+	line-height: 80rpx;
+	font-size: 32rpx;
+	color: #888;
+	border-bottom: 10rpx splid #888;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.jobInfoSelectCategory {
+	text-align: center;
+	width: 373rpx;
+	height: 80rpx;
+	border-right: 2rpx solid #ddd;
+	border-bottom: 2rpx solid #ddd;
+}
+.jobInfoSelectCondition {
+	text-align: center;
+	width: 375rpx;
+	height: 80rpx;
+	border-bottom: 2rpx solid #ddd;
+}
+.van-card {
+	background-color: #fff !important;
+}
+.jobInfoShowTag {
+	display: inline-block;
+	padding: 5rpx;
+	border: 1px solid #ccc;
+	color: #888;
+	font-size: 26rpx;
+}
+.van-card__num {
+	position: relative;
+}
+.van-card__num .van-icon {
+	position: absolute;
+	left: -35rpx;
+	top: 6rpx;
+}

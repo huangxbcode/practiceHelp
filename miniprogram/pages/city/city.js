@@ -18,6 +18,19 @@ Page({
 			cityList
 		});
 	},
+	/**
+	 * 选择需要找实习的城市
+	 */
+	chooseCity:function (event) {
+		console.log(event.currentTarget.dataset.city);
+		wx.setStorage({
+			key: 'city',
+			data: event.currentTarget.dataset.city
+		})
+		wx.switchTab({
+			url: '../../pages/index/index'
+		})
+	},
 
 	/**
 	 * 生命周期函数--监听页面初次渲染完成
@@ -30,7 +43,9 @@ Page({
 	 * 生命周期函数--监听页面显示
 	 */
 	onShow: function () {
-		
+		wx.setNavigationBarTitle({
+			title: '当前城市+'+this.data.positionCity,
+		})
 	},
 
 	/**

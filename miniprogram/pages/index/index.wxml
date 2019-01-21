@@ -1,15 +1,65 @@
 <view class='container'>
+  <!-- 选择地点及搜索框 -->
   <view class='locationAndSearch'>
     <view class='location' bindtap='goToCityChoose'>
-      <van-icon name="location-o"  color='#fff'/>
-			<text>{{address}}</text>
+      <van-icon name="location-o" color='#fff' />
+      <text>{{address}}</text>
     </view>
     <view class='search'>
-			<van-search
-			 value="{{ search }}"
-			 placeholder="请输入你想找的实习" 
-			 background="#3399ff"
-			 />
+      <van-search value="{{ search }}" placeholder="请输入你想找的实习" background="#3399ff" />
     </view>
   </view>
+
+  <!-- 第一模块 -->
+  <view class='first'>
+    <!-- 轮播图 -->
+    <swiper class='swiper' autoplay="true" circular="true">
+      <block wx:key="{{index}}" wx:for="{{swiper}}">
+        <swiper-item>
+          <image src="{{item.src}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <!-- 职位选择 -->
+    <view class='chooseJob'>
+      <view class='chooseJobItem' wx:key="{{index}}" wx:for="{{chooseJob}}">
+        <view class='chooseJobItemTop'>
+          <image src='{{item.src}}'></image>
+        </view>
+        <view class='chooseJobItemBottom'>
+          {{item.name}}
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+  <!-- 第二模块 -->
+  <view class='jobInfo'>
+    <view class='jobInfoSelect'>
+      <view class='jobInfoSelectCategory'>
+        职位类别
+        <van-icon name="arrow-down" />
+      </view>
+      <view class='jobInfoSelectCondition'>
+        筛选条件
+        <van-icon name="arrow-down" />
+      </view>
+    </view>
+    <view class='jobInfoShow'>
+      <van-card 
+			lazy-load 
+			desc="陌陌" 
+			title="web前端开发工程师(19届)" thumb="https://www.lgstatic.com/thumbnail_100x100/i/image/M00/C3/CB/Cgp3O1jcvUOATXv_AABZ6zpEAKk174.jpg"
+			price="200-250/天"
+			num="5天/周"
+			num-class="num"
+			>
+        <view slot="tags">
+          <view class="jobInfoShowTag">岗位晋升</view>
+        </view>
+      </van-card>
+    </view>
+  </view>
+
 </view>
