@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
@@ -41,7 +41,20 @@
 				{
 					"id": -1,
 					"name": "start",
-					"pathName": "pages/start/start"
+					"pathName": "pages/start/start",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "start",
+					"pathName": "pages/city/city",
+					"query": "city=天津"
+				},
+				{
+					"id": -1,
+					"name": "start",
+					"pathName": "pages/city/city",
+					"query": "city=天津"
 				}
 			]
 		}

@@ -3,10 +3,11 @@
 		"pages/index/index",
 		"pages/deliver/deliver",
 		"pages/me/me",
-		"pages/start/start"
+		"pages/start/start",
+		"pages/city/city"
 	],
 	"window": {
-		"backgroundColor": "#fff",
+		"backgroundColor": "#f0f0f0",
 		"backgroundTextStyle": "light",
 		"navigationBarBackgroundColor": "#3399ff",
 		"navigationBarTitleText": "BUCT实习帮",

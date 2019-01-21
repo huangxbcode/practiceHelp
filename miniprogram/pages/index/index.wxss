@@ -1,0 +1,27 @@
+.locationAndSearch {
+	padding: 25rpx;
+	background-color: #3399ff;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.location {
+	padding: 10rpx 15rpx;
+	background-color: #3366cc;
+	border-radius:30rpx;
+}
+.location view {
+	float: left;
+	right: 5rpx;
+}
+.location text {
+	float: right;
+	color: #fff;
+	font-size: 32rpx;
+}
+.search {
+	width: 545rpx;
+}
+.van-search__field {
+	border-radius: 30rpx !important;
+}

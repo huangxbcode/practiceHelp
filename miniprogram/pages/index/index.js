@@ -4,7 +4,7 @@ const QQMapWX = require('../../utils/qqmap-wx-jssdk.js');
 const qqmapsdk = new QQMapWX({
 	key: 'JEHBZ-IMWL5-47LIP-QKBUW-BKGT3-BDFG4' // 必填
 });
-
+const that = this;
 Page({
 
 	/**
@@ -18,25 +18,25 @@ Page({
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-		// wx.getLocation({
-		// 	success: (res) => {
-		// 		qqmapsdk.reverseGeocoder({
-		// 			location: {
-		// 				latitude:res.latitude,
-		// 				longitude:res.longitude
-		// 			},
-		// 			success:(res) => {
-		// 				console.log(res.result.ad_info.province);
-		// 				this.setData({
-		// 					address: res.result.ad_info.province
-		// 				});
-		// 			},
-		// 			fail: (error) => {
-		// 				console.error(error);
-		// 			},
-		// 		})
-		// 	},
-		// })
+		wx.getLocation({
+			success: (res) => {
+				qqmapsdk.reverseGeocoder({
+					location: {
+						latitude:res.latitude,
+						longitude:res.longitude
+					},
+					success:(res) => {
+						console.log(res);
+						this.setData({
+							address: res.result.ad_info.city
+						});
+					},
+					fail: (error) => {
+						console.error(error);
+					},
+				})
+			},
+		})
 	},
 
 	/**
@@ -86,5 +86,14 @@ Page({
 	 */
 	onShareAppMessage: function () {
 		
+	},
+	/** 
+	 * 点击进入城市选择页面
+	*/
+	goToCityChoose: function(event) {
+		const city = this.data.address.substring(0,this.data.address.length-1);
+		wx.navigateTo({
+			url: '../../pages/city/city?city='+city,
+		})
 	}
 })

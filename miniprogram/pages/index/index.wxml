@@ -1,2 +1,15 @@
-<text>BUCT实习帮</text>
-<text>{{address}}</text>
+<view class='container'>
+  <view class='locationAndSearch'>
+    <view class='location' bindtap='goToCityChoose'>
+      <van-icon name="location-o"  color='#fff'/>
+			<text>{{address}}</text>
+    </view>
+    <view class='search'>
+			<van-search
+			 value="{{ search }}"
+			 placeholder="请输入你想找的实习" 
+			 background="#3399ff"
+			 />
+    </view>
+  </view>
+</view>

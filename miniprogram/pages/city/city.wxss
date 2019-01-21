@@ -1,0 +1,54 @@
+/* pages/city/city.wxss */
+
+.positionCity {
+  background-color: #f0f0f0;
+  padding-top: 40rpx;
+  padding-left: 30rpx;
+  margin-bottom: 50rpx;
+}
+
+.positionCity text {
+  font-size: 30rpx;
+	color: #5E5E5E;
+}
+
+.positionCity .city {
+  margin-top: 20rpx;
+	margin-left: 30rpx;
+  width: 200rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  color: #1e90ff;
+  font-size: 28rpx;
+  border: 1px solid #1e90ff;
+}
+
+.other {
+  background-color: #f0f0f0;
+  padding-left: 30rpx;
+  overflow: hidden;
+  padding-bottom: 50rpx;
+}
+
+.other text {
+  font-size: 30rpx;
+	color: #5E5E5E;
+}
+.other .city {
+  margin-top: 30rpx;
+  width: 200rpx;
+  height: 70rpx;
+	float: left;
+	margin-left: 30rpx;
+  line-height: 70rpx;
+  text-align: center;
+  color: #8C8C8C;
+  font-size: 28rpx;
+  border: 1px solid #D3D3D3;
+}
+#true {
+	color: #1e90ff;
+  font-size: 28rpx;
+  border: 1px solid #1e90ff;
+}
