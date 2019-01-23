@@ -6,7 +6,8 @@
 		"pages/start/start",
 		"pages/city/city",
 		"pages/urgent/urgent",
-		"pages/recommend/recommend"
+		"pages/recommend/recommend",
+		"pages/noJob/noJob"
 	],
 	"window": {
 		"backgroundColor": "#f0f0f0",

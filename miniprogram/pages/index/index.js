@@ -178,6 +178,17 @@ Page({
 					url: '../../pages/recommend/recommend'
 				})
 			};break;
+			case '高薪实习': {
+				wx.navigateTo({
+					url: '../../pages/urgent/urgent'
+				})
+			}; break;
+			case '短期实习': {
+				wx.navigateTo({
+					url: '../../pages/noJob/noJob'
+				})
+			}; break;
+			default:break;
 		}
 	}
 })

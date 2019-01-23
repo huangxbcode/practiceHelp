@@ -1,0 +1,9 @@
+<!--pages/start/start.wxml-->
+<view class='container'>
+	<view class='noJob'>
+		<image src='../../images/noJob.png'></image>
+			<text>这里没有记录哦</text>
+			<van-button bind:click="goToIndex" type="danger">去看看职位</van-button>
+	</view>
+</view>
+

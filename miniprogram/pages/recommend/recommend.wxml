@@ -22,7 +22,7 @@
   </view>
 
   <view class='submit'>
-    <van-button type='primary' size='large' round>提交
+    <van-button bind:click="submit" type='primary' size='large' round>提交
     </van-button>
   </view>
 

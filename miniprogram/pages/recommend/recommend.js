@@ -130,5 +130,26 @@ Page({
 			activeCityText
 		});
 		this.onCitySelectClose();
+	},
+	/**
+	 * 提交筛选项目
+	 */
+	submit : function (event) {
+		const { activeJobText, activeCityText } = this.data;
+		if (!activeJobText) {
+			wx.showToast({
+				title: '请选择期望职位',
+				icon: 'none'
+			});
+			return;
+		} else if(!activeCityText) {
+			wx.showToast({
+				title: '请选择期望城市',
+				icon:'none'
+			});
+			return;
+		}
+		console.log(activeJobText,activeCityText);
+
 	}
 })
