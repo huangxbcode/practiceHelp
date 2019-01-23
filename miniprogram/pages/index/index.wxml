@@ -37,31 +37,50 @@
   <!-- 第二模块 -->
   <view class='jobInfo'>
     <view class='jobInfoSelect'>
-      <view class='jobInfoSelectCategory'>
-        职位类别
+      <view class='jobInfoSelectCategory' bindtap='chooseJobType'>
+        {{activeJobText}}
         <van-icon name="arrow-down" />
       </view>
-      <view class='jobInfoSelectCondition'>
+      <view class='jobInfoSelectCondition' bindtap='chooseCondition'>
         筛选条件
         <van-icon name="arrow-down" />
       </view>
     </view>
     <view class='jobInfoShow'>
-      <van-card 
-			lazy-load 
-			desc="陌陌" 
-			title="web前端开发工程师(19届)" thumb="https://www.lgstatic.com/thumbnail_100x100/i/image/M00/C3/CB/Cgp3O1jcvUOATXv_AABZ6zpEAKk174.jpg"
-			price="200-250/天"
-			num="5天/周"
-			num-class="num"
-			>
+      <van-card lazy-load desc="陌陌" title="web前端开发工程师(19届)" thumb="https://www.lgstatic.com/thumbnail_100x100/i/image/M00/C3/CB/Cgp3O1jcvUOATXv_AABZ6zpEAKk174.jpg" price="200-250/天" num="5天/周" num-class="num">
         <view class='tags' slot="tags">
           <view class="jobInfoShowTag">岗位晋升</view>
-					<view class="jobInfoShowTag">帅哥多</view>
-					<view class="jobInfoShowTag">管理规范</view>
+          <view class="jobInfoShowTag">帅哥多</view>
+          <view class="jobInfoShowTag">管理规范</view>
         </view>
       </van-card>
     </view>
   </view>
 
+  <!-- 职位类别蒙层 -->
+  <van-popup show="{{ jobTypeShow }}" position="top" bind:close="chooseJobTypeClose">
+    <van-tree-select items="{{ classify }}" main-active-index="{{ mainActiveJobIndex }}" active-id="{{ activeJobId }}" bind:click-nav="onClickJobNav" bind:click-item="onClickJobItem" />
+  </van-popup>
+  <!-- 筛选条件蒙层 -->
+  <van-popup show="{{ conditionShow }}" position="top" bind:close="chooseConditionClose">
+    <view class='filterCondition'>
+      <view wx:for="{{ filterCondition }}" wx:key="{{item.text}}" class='filterCondition-content'>
+        <view class='filterCondition-content-title'>
+          {{item.text}}
+        </view>
+        <view data-type="{{item.value}}" data-option="{{itemName.text}}" bindtap='chooseConditionType' id="{{itemName.isChoose}}" wx:for="{{item.children}}" wx:key="{{idx}}" wx:for-index="idx" wx:for-item="itemName" class='filterCondition-content-option'>
+          {{itemName.text}}
+        </view>
+      </view>
+    </view>
+    <view class='filterCondition-footer'>
+      <view bindtap='conditionReset' class='filterCondition-footer-left'>
+        重置
+      </view>
+      <view bindtap='conditionSubmit' class='filterCondition-footer-right'>
+        确认
+      </view>
+    </view>
+
+  </van-popup>
 </view>

@@ -4,6 +4,8 @@ const QQMapWX = require('../../utils/qqmap-wx-jssdk.js');
 const qqmapsdk = new QQMapWX({
   key: 'JEHBZ-IMWL5-47LIP-QKBUW-BKGT3-BDFG4' // 必填
 });
+const classify = require('../../utils/classify.js');
+const filterCondition = require('../../utils/filterCondition.js');
 Page({
 
   /**
@@ -11,6 +13,12 @@ Page({
    */
   data: {
     address: '',
+		activeJobText:'职位类别',
+		practiceDay:'不限',
+		practicePrice:'不限',
+		practiceMonth:'不限',
+		practiceEducation:'不限',
+		practiceRegular:'不限',
 		swiper:[],
 		chooseJob:[]
   },
@@ -63,7 +71,9 @@ Page({
 			chooseJob[3].name = "短期实习";
 			this.setData({
 				swiper:res.fileList.splice(0,4),
-				chooseJob
+				chooseJob,
+				classify,
+				filterCondition
 			});
 		}).catch(error => {
 			console.log(error);
@@ -190,5 +200,109 @@ Page({
 			}; break;
 			default:break;
 		}
+	},
+	/**
+	 * 选择职位类别
+	 */
+	chooseJobType:function (event) {
+		console.log(event);
+		this.setData({
+			jobTypeShow:true
+		});
+	},
+	// 职位类别
+	onClickJobNav({ detail = {} }) {
+		console.log(detail);
+		this.setData({
+			mainActiveJobIndex: detail.index || 0
+		});
+	},
+	onClickJobItem({ detail = {} }) {
+		console.log(detail);
+		this.setData({
+			activeJobId: detail.id,
+			activeJobText: detail.text,
+			jobTypeShow: false
+		});
+	},
+	/**
+	 * 选择职位类别蒙层关闭
+	 */
+	chooseJobTypeClose:function (event) {
+		this.setData({
+			jobTypeShow:false
+		});
+	},
+	/**
+	 * 选择筛选条件
+	 */
+	chooseCondition: function (event) {
+		this.setData({
+			conditionShow:true,
+		});
+	},
+	/**
+	 * 筛选条件蒙层关闭
+	 */
+	chooseConditionClose:function (event) {
+		this.setData({
+			conditionShow:false
+		});
+	},
+	/**
+	 * 筛选条件蒙层中条件选择(数据结构设计失误，暂时的烂代码)
+	 */
+	chooseConditionType:function (event) {
+		const type = event.currentTarget.dataset.type;
+		const option = event.currentTarget.dataset.option;
+		filterCondition.map((item) => {
+			if(item.value === type) {
+				return item.children.map((item1) => {
+					item1.isChoose = false;
+					if(item1.text === option) {
+						return item1.isChoose = true;
+					}
+				});
+			}
+		});
+		this.setData({
+			filterCondition
+		});
+
+	},
+	/**
+	 * 重置筛选条件
+	 */
+	conditionReset:function (event) {
+		filterCondition.map((item) => {
+				return item.children.map((item1) => {
+					item1.isChoose = false;
+					if (item1.text === '不限') {
+						return item1.isChoose = true;
+					}
+				});
+		});
+		this.setData({
+			filterCondition
+		});
+	},
+	/**
+	 * 提交筛选条件
+	 */
+	conditionSubmit:function (event) {
+		console.log(event);
+		const { filterCondition } = this.data;
+		let filter = [];
+		for(let i = 0;i<filterCondition.length;i++) {
+			for(let j =0;j<filterCondition[i].children.length;j++) {
+				if (filterCondition[i].children[j].isChoose === true) {
+					filter.push({ type: filterCondition[i].text, typeValue: filterCondition[i].value,value: filterCondition[i].children[j].value, text: filterCondition[i].children[j].text});
+				}
+			}
+		}
+		this.setData({
+			filter
+		});
 	}
+
 })

@@ -128,3 +128,47 @@
 	left: -35rpx;
 	top: 6rpx;
 }
+
+/* 筛选条件蒙层 */
+.filterCondition {
+	padding: 30rpx 30rpx 0 30rpx;
+}
+.filterCondition-content {
+	overflow: hidden;
+}
+.filterCondition-content-title {
+	font-size: 35rpx;
+	font-weight: 600;
+}
+.filterCondition-content-option {
+	display: inline-block;
+	background-color: #F2F2F2;
+	color: #A8A8A8;
+	font-size: 30rpx;
+	float: left;
+	padding: 10rpx 25rpx;
+	margin: 22rpx;
+}
+.filterCondition-footer {
+	margin-top: 30rpx;
+	border-top: 1rpx solid #ccc;
+}
+.filterCondition-footer-left,.filterCondition-footer-right {
+	width: 375rpx;
+	height: 100rpx;
+	line-height: 100rpx;
+	text-align: center;
+	float: left;
+	font-size: 35rpx;
+}
+.filterCondition-footer-left {
+	color: #A8A8A8;
+}
+.filterCondition-footer-right {
+	background-color:#3399ff;
+	color: #fff; 
+}
+#true {
+	background-color:#3399ff;
+	color: #fff; 
+}
