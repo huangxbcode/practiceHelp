@@ -160,5 +160,24 @@ Page({
     wx.navigateTo({
       url: '../../pages/city/city?city=' + this.data.address,
     })
-  }
+  },
+
+	/**
+	 * 选择职位类型
+	 */
+	chooseJob:function (event) {
+		const type = event.currentTarget.dataset.type;
+		switch(type) {
+			case '急招职位':{
+				wx.navigateTo({
+					url: '../../pages/urgent/urgent'
+				})
+			};break;
+			case '推荐职位':{
+				wx.navigateTo({
+					url: '../../pages/recommend/recommend'
+				})
+			};break;
+		}
+	}
 })

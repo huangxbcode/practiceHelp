@@ -1,0 +1,45 @@
+/* pages/recommend/recommend.wxss */
+.title {
+	display: block;
+	height: 100rpx;
+	background-color: #fff;
+	text-align: center;
+	font-size: 30rpx;
+	line-height: 36rpx;
+	color: #888;
+	margin-bottom: 30rpx;
+}
+.selInfo {
+	margin-bottom: 80rpx;
+}
+
+.selInfoJob {
+	height: 100rpx;
+	background-color: #fff;
+	border-bottom: 1rpx solid #ccc;	
+}
+.forward {
+	float: left;
+	line-height: 33rpx;
+	font-size: 32rpx;
+	margin-left: 20rpx;
+	margin-right: 40rpx;
+}
+input {
+	float: left;
+	font-size: 32rpx;
+	margin-top: 25rpx;
+	color: #888;
+}
+.selInfoCity {
+	height: 100rpx;
+	background-color: #fff;
+	border-bottom: 1rpx solid #ccc;	
+}
+.submit {
+	padding: 0 30rpx;
+}
+.van-button {
+	background-color: #3399ff !important;
+	border: 1rpx solid #3399ff !important;
+}

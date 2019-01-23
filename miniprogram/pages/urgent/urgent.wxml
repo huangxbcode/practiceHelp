@@ -1,0 +1,16 @@
+<view class='jobInfoShow'>
+      <van-card 
+			lazy-load 
+			desc="陌陌" 
+			title="web前端开发工程师(19届)" thumb="https://www.lgstatic.com/thumbnail_100x100/i/image/M00/C3/CB/Cgp3O1jcvUOATXv_AABZ6zpEAKk174.jpg"
+			price="200-250/天"
+			num="5天/周"
+			num-class="num"
+			>
+        <view class='tags' slot="tags">
+          <view class="jobInfoShowTag">岗位晋升</view>
+					<view class="jobInfoShowTag">帅哥多</view>
+					<view class="jobInfoShowTag">管理规范</view>
+        </view>
+      </van-card>
+    </view>

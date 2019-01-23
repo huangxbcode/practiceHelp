@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+		"van-button": "vant-weapp/button",
+		"van-tree-select": "vant-weapp/tree-select",
+		"van-popup": "vant-weapp/popup",
+		"van-area": "vant-weapp/area"
+	}
+}

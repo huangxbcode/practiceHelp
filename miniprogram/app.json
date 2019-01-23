@@ -4,7 +4,9 @@
 		"pages/deliver/deliver",
 		"pages/me/me",
 		"pages/start/start",
-		"pages/city/city"
+		"pages/city/city",
+		"pages/urgent/urgent",
+		"pages/recommend/recommend"
 	],
 	"window": {
 		"backgroundColor": "#f0f0f0",

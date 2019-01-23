@@ -1,0 +1,59 @@
+<view class='container' style='padding-top:40rpx;'>
+  <text class='title'>
+	填写期望实习，大数据小哥哥为你量身推荐职位哦!
+	</text>
+  <view class='selInfo'>
+    <view class='selInfoJob'>
+      <text class='forward'>
+				期望职位
+			</text>
+      <input value='{{activeJobText}}' bindtap='chooseJob' disabled placeholder='请选择'>
+
+      </input>
+    </view>
+    <view class='selInfoCity'>
+      <text class='forward'>
+				期望城市
+			</text>
+      <input value='{{activeCityText}}' bindtap='chooseCity' disabled placeholder='请选择'>
+
+      </input>
+    </view>
+  </view>
+
+  <view class='submit'>
+    <van-button type='primary' size='large' round>提交
+    </van-button>
+  </view>
+
+	<!-- 期望职位分类 -->
+	<van-popup 
+	show="{{ jobSelectShow }}" 
+	bind:close="onJobSelectClose"
+	position="bottom"
+	>
+	<van-tree-select
+  items="{{ classify }}"
+  main-active-index="{{ mainActiveJobIndex }}"
+  active-id="{{ activeJobId }}"
+  bind:click-nav="onClickJobNav"
+  bind:click-item="onClickJobItem"
+/>
+	</van-popup>
+
+<!-- 期望城市分类 -->
+	<van-popup 
+	show="{{ citySlectShow }}" 
+	bind:close="onCitySelectClose"
+	position="bottom"
+	>
+<van-area 
+area-list="{{ areaList }}" 
+title="城市选择"
+columns-num="{{ 2 }}"
+value="110101"
+bind:cancel="onCitySelectClose"
+bind:confirm="onCitySelectConfirm"
+/>
+	</van-popup>
+</view>

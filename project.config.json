@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 4,
 			"list": [
 				{
 					"id": -1,
@@ -55,6 +55,11 @@
 					"name": "start",
 					"pathName": "pages/city/city",
 					"query": "city=天津"
+				},
+				{
+					"id": -1,
+					"name": "recommend",
+					"pathName": "pages/recommend/recommend"
 				}
 			]
 		}

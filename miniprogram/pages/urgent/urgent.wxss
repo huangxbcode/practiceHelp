@@ -1,0 +1,29 @@
+/* pages/urgent/urgent.wxss */
+.van-card {
+	background-color: #fff !important;
+}
+.tags {
+	margin-left: -15rpx;
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+}
+.jobInfoShowTag {
+	display: inline-block;
+	margin-left: 15rpx;
+	padding: 5rpx;
+	border: 1px solid #ccc;
+	color: #888;
+	font-size: 26rpx;
+}
+.van-card {
+	border-bottom: 1rpx solid #ccc;
+}
+.van-card__num {
+	position: relative;
+}
+.van-card__num .van-icon {
+	position: absolute;
+	left: -35rpx;
+	top: 6rpx;
+}

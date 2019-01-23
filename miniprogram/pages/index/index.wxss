@@ -41,7 +41,7 @@
 	margin: 0 10rpx 0 10rpx;
 	border-radius: 70rpx;
 }
-/* 职位你选择 */
+/* 职位选择 */
 .chooseJob {
 	padding: 20rpx;
 	display: flex;

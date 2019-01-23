@@ -22,7 +22,7 @@
     </swiper>
     <!-- 职位选择 -->
     <view class='chooseJob'>
-      <view class='chooseJobItem' wx:key="{{index}}" wx:for="{{chooseJob}}">
+      <view class='chooseJobItem' wx:key="{{index}}" wx:for="{{chooseJob}}" data-type='{{item.name}}' bindtap='chooseJob'>
         <view class='chooseJobItemTop'>
           <image src='{{item.tempFileURL}}'></image>
         </view>
